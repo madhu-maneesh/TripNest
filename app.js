@@ -22,15 +22,17 @@ const listingRouter = require('./Router/routes');
 const reviewRouter = require('./Router/review');
 
 // Database Connection
+// Database Connection
 const mongoUrl = process.env.MONGODB_URI;
-main().then(() => console.log(" Connected to MongoDB Atlas"))
-     .catch(err => console.log(" MongoDB Connection Error:", err));
+
+main()
+  .then(() => console.log(" Connected to MongoDB Atlas"))
+  .catch(err => console.error(" MongoDB Connection Error:", err));
+
 async function main() {
-    await mongoose.connect(mongoUrl, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
+  await mongoose.connect(mongoUrl);
 }
+
 
 // Session Store Setup
 const store = MongoStore.create({
