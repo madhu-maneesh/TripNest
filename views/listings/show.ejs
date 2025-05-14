@@ -1,0 +1,95 @@
+<% layout('/layouts/boilerplate') %>
+<body class="show-listing">
+    <h3><%= showListing.title %></h3>
+    <ul>
+        <li><%= showListing.description%></li>
+        <!-- <img src="<%= showListing.image.url %>" alt="Listing Image" class="listing-img"> -->
+         <div class="listing-image-wrapper">
+            <img src="<%= showListing.image.url %>" alt="Listing Image" class="listing-image">
+          </div>
+        <li>owned by <%= showListing.owner ? showListing.owner.username : "Unknown Owner" %></li>
+        <li> &#8377; <%= showListing.price ? showListing.price.toLocaleString("en-IN") : "N/A" %></li>
+        <li><%= showListing.location %></li>
+        <li><%= showListing.country %></li>
+    </ul>
+    <br/>
+    <% if(currUser && currUser.equals(showListing.owner)) { %>
+    <a href="/listings/<%= showListing._id %>/edit">Edit</a>
+    <br/><br>
+    <form method="POST" action="/listings/<%= showListing._id%>?_method=Delete">
+        <button>Delete This Listing</button>
+    </form>
+    <br/>
+    <% } %>
+    <hr>
+<form id="reviewForm" action="/listings/<%= showListing._id %>/reviews" class="needs-validation" novalidate method="POST">
+  <label class="form-label">How was your experience?</label>
+
+  <div class="mb-3" id="emojiGroup">
+    <input type="radio" name="emoji" value="😍" id="rate5">
+    <label for="rate5">😍</label>
+
+    <input type="radio" name="emoji" value="😊" id="rate4">
+    <label for="rate4">😊</label>
+
+    <input type="radio" name="emoji" value="😐" id="rate3">
+    <label for="rate3">😐</label>
+
+    <input type="radio" name="emoji" value="😕" id="rate2">
+    <label for="rate2">😕</label>
+
+    <input type="radio" name="emoji" value="😠" id="rate1">
+    <label for="rate1">😠</label>
+
+    <div id="emojiError" style="color:red; display:none;">Please select an emoji.</div>
+  </div>
+
+  <textarea 
+    name="comment" 
+    id="comment" 
+    placeholder="Write your review..." 
+    class="review-textarea"
+    rows="4" 
+    cols="50">
+  </textarea>
+  <div id="commentError" style="color:red; display:none;">Please enter a comment.</div>
+
+  <br><br/>
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+  <script>
+  document.getElementById('reviewForm').addEventListener('submit', function (e) {
+    let isValid = true;
+
+    // Validate emoji (at least one selected)
+    const emojis = document.querySelectorAll('input[name="emoji"]');
+    let emojiSelected = false;
+    emojis.forEach((radio) => {
+      if (radio.checked) emojiSelected = true;
+    });
+
+    if (!emojiSelected) {
+      document.getElementById('emojiError').style.display = 'block';
+      isValid = false;
+    } else {
+      document.getElementById('emojiError').style.display = 'none';
+    }
+
+    // Validate comment
+    const comment = document.getElementById('comment').value.trim();
+    if (comment === "") {
+      document.getElementById('commentError').style.display = 'block';
+      isValid = false;
+    } else {
+      document.getElementById('commentError').style.display = 'none';
+    }
+
+    // If any field is invalid, prevent form submission
+    if (!isValid) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  });
+</script>

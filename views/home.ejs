@@ -1,0 +1,17 @@
+<% layout('/layouts/boilerplate') %>
+
+<section class="home">
+<div class="container mt-5 text-center">
+    <h1>Welcome to TripNest 🏨</h1>
+    <p class="lead">Find and book your next adventure with comfort and ease.</p>
+    
+    <% if (!currUser) { %>
+        <a href="/signup" class="btn btn-primary mt-3">Sign Up Now</a>
+        <p class="mt-2">Already a member? <a href="/login">Login</a></p>
+    <% } else { %>
+        <a href="/listings" class="btn btn-success mt-3">Explore Listings</a>
+    <% } %>
+</div>
+</section>
+
+
