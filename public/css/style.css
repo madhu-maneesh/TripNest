@@ -59,18 +59,22 @@
     font-size: 1.1rem;
   }
 }
+
 /*nav bar styling*/
-.navbar{
-    height: 5rem;
-    background-color: white;
+.navbar {
+  height: auto;
+  padding: 0.5rem 1rem;
+  background-color: white;
 }
 
-.fa-compass{
-    color:#fe424d ;
-    height: 2rem;
+.fa-compass {
+  color: #fe424d;
+  font-size: 1.5rem;
 }
-.nav-link{
-    color: #222222 !important;
+
+.nav-link {
+  color: #222222 !important;
+  font-weight: 500;
 }
 
 /*footer styling*/
