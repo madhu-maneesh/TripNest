@@ -3,11 +3,6 @@ const router = express.Router();
 const listing = require('../Models/listing');
 const { isLoggedIn } = require('../middleware');
 
-//index route
-// router.get('/', async (req, res) => {
-//     let allListings=await listing.find({});
-//     res.render("listings/index.ejs",{ allListings });
-// });
 router.get("/", async (req, res) => {
     let searchQuery = req.query.q;
     let allListings;

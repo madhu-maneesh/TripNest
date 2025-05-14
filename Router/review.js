@@ -6,13 +6,13 @@ const listing = require('../Models/listing');
 // Review route - POST /listings/:id/reviews
 router.post("/", async (req, res) => {
     try {
-        let { id } = req.params; // Now this will work
+        let { id } = req.params; 
         let { comment, emoji } = req.body;
         let newReview = new review({ comment, emoji });
 
         await newReview.save();
 
-        // Add review to listing
+        // Adding review to listing
         let foundListing = await listing.findById(id);
         foundListing.reviews.push(newReview._id);
         await foundListing.save();

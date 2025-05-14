@@ -1,7 +1,6 @@
 
 <% layout('/layouts/boilerplate') %>
 <head>
-    <!-- Include Bootstrap CSS if not included already -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -49,7 +48,7 @@
 
     <script>
         (() => {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            // getting all this listings
             const forms = document.querySelectorAll('.needs-validation');
         
             // Loop over them and prevent submission
@@ -81,7 +80,7 @@
                         isValid = false;
                     }
         
-                    // Image URL validation (optional)
+                    // Image URL validation 
                     const imageUrl = document.getElementById('imageUrl').value;
                     const urlPattern = /^(https?:\/\/[^\s$.?#].[^\s]*)$/;
                     if (imageUrl && !urlPattern.test(imageUrl)) {
@@ -103,10 +102,9 @@
                         isValid = false;
                     }
         
-                    // Add Bootstrap's was-validated class to show validation feedback
+                    // Adding Bootstrap was-validated class to show validation 
                     form.classList.add('was-validated');
         
-                    // If form is not valid, prevent form submission
                     if (!isValid) {
                         event.preventDefault();
                         event.stopPropagation();

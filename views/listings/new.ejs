@@ -1,7 +1,7 @@
 
 <% layout('/layouts/boilerplate') %>
 <head>
-    <!-- Include Bootstrap CSS if not included already -->
+    <!-- Included Bootstrap CSS-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -50,10 +50,9 @@
 
     <script>
         (() => {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            // same as the prev validations in edit.ejs
             const forms = document.querySelectorAll('.needs-validation');
-        
-            // Loop over them and prevent submission
+    
             Array.from(forms).forEach(form => {
                 form.addEventListener('submit', event => {
                     let isValid = true;
@@ -104,10 +103,8 @@
                         isValid = false;
                     }
         
-                    // Add Bootstrap's was-validated class to show validation feedback
                     form.classList.add('was-validated');
-        
-                    // If form is not valid, prevent form submission
+                    
                     if (!isValid) {
                         event.preventDefault();
                         event.stopPropagation();
