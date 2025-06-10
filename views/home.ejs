@@ -14,6 +14,23 @@
         <a href="/listings" class="btn btn-success mt-3">Explore Listings</a>
       <% } %>
     </div>
+    <hr class="my-4">
+
+<div class="ai-suggestion text-light">
+  <h2>Need Help Planning a Trip?</h2>
+  <form id="suggestForm" class="mt-3 d-flex flex-column align-items-center">
+    <input
+      type="text"
+      name="query"
+      class="form-control w-75 mb-2"
+      placeholder="E.g., A quiet 3-day hill station near Bangalore"
+      required
+    />
+    <button type="submit" class="btn btn-warning">Get AI Suggestion</button>
+  </form>
+
+  <div id="result" class="mt-3 bg-dark p-3 rounded w-75 mx-auto text-start" style="white-space: pre-wrap;"></div>
+</div>
   </div>
 </section>
 

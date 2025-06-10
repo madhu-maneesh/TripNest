@@ -11,6 +11,10 @@ const MongoStore = require('connect-mongo');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 
+//specific
+const cors = require('cors');
+
+
 // Models
 const User = require('./Models/users');
 const listing = require('./Models/listing');
@@ -20,8 +24,9 @@ const review = require('./Models/review');
 const userRouter = require('./Router/users');
 const listingRouter = require('./Router/routes');
 const reviewRouter = require('./Router/review');
+const gptrouter = require('./Router/gptsuggest');
 
-// Database Connection
+
 // Database Connection
 const mongoUrl = process.env.MONGODB_URI;
 
@@ -71,6 +76,7 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sessionOptions));
 app.use(flash());
+app.use(cors());
 
 // Passport Config
 app.use(passport.initialize());
@@ -91,6 +97,14 @@ app.use((req, res, next) => {
 app.use('/', userRouter); // Handles /login, /signup, etc.
 app.use('/listings', listingRouter);
 app.use('/listings/:id/reviews', reviewRouter);
+app.use('/api',gptrouter);
+
+// app.post('/api/suggest', (req, res) => {
+//   console.log('Test route hit with:', req.body);
+//   res.json({ suggestion: "Test successful" });
+// });
+
+
 
 // Home Page
 app.get('/', (req, res) => {

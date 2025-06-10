@@ -15,10 +15,24 @@
         </li>
       </ul>
 
-      <form class="d-flex me-md-3 mb-2 mb-md-0" role="search" action="/listings" method="GET">
+      <!-- <form class="d-flex me-md-3 mb-2 mb-md-0" role="search" action="/listings" method="GET">
         <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> -->
+  <form class="d-flex flex-wrap gap-2 align-items-center" role="search" action="/listings" method="GET" style="max-width: 500px; margin: auto;">
+    <input 
+      class="form-control rounded-pill px-4 shadow-sm border-0" 
+      type="search" 
+      name="q" 
+      placeholder="🔍 Search destinations..." 
+      aria-label="Search" 
+      style="flex: 1; min-width: 200px;"/>
+    <button 
+        class="btn btn-success rounded-pill px-4 fw-semibold shadow-sm" 
+        type="submit">Search
+    </button>
+  </form>
+
 
       <ul class="navbar-nav mb-2 mb-md-0">
         <% if (!currUser) { %>
