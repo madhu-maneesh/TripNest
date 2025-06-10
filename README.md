@@ -14,11 +14,20 @@ TripNest is a web application that allows users to browse, create, edit, and man
 - **Reviews & Ratings**: Users can post reviews using emoji and comments.
 - **Responsive Design**: The site is mobile-friendly and works seamlessly on all devices.
 
+## AI Suggestion Feature
+
+The AI-powered suggestion system allows users to get travel ideas based on natural language input.  
+Example prompt:  
+> “3-day budget-friendly trip near Bangalore with hills and good food”
+
+**Powered by:** [OpenRouter.ai](https://openrouter.ai)
+
 ## Tech Stack
 
 - **Frontend**: HTML, CSS, EJS templates, Bootstrap
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB (for storing listings and user data)
+-**AI Integration**: OpenRouter API (GPT-style models)
   
 ## Authentication
 

@@ -5,7 +5,8 @@
   min-height: 100vh;
   background: 
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-    url('https://t3.ftcdn.net/jpg/13/85/09/12/360_F_1385091232_5JaCgESXHFeRwYczGNrLpGB3Ls3bmMb1.jpg') center/cover no-repeat;
+    url('https://t3.ftcdn.net/jpg/13/85/09/12/360_F_1385091232_5JaCgESXHFeRwYczGNrLpGB3Ls3bmMb1.jpg') center/cover no-repeat ;
+  height: 50%;
 
   color: #fff;
   font-family: 'Poppins', sans-serif;
