@@ -42,16 +42,32 @@ The authentication flow includes:
 - **Session management** with **express-session** and **Passport.js**.
   
 ## Screenshots
-Homepage of the TripNest
-<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/0ba371d3-a4ed-45a3-9234-01644d3bc5b4" />
+Homepage of the TripNest:
 
-<img width="1920" height="1020" alt="Screenshot 2025-07-18 141937" src="https://github.com/user-attachments/assets/239526ce-db6c-4376-997e-15c54d6966f3" />
-<img width="1920" height="1020" alt="Screenshot 2025-07-18 141918" src="https://github.com/user-attachments/assets/1f965a4a-d38d-4d42-996a-e5f6981c2fc0" />
+<img width="1920" height="1020" alt="Screenshot 2025-07-18 141903" src="https://github.com/user-attachments/assets/8e722ac6-f8ef-4442-b0c4-6134a5bdbcda" />
 
-
-<img width="1920" height="1020" alt="Screenshot 2025-07-18 142016" src="https://github.com/user-attachments/assets/d60810c6-487e-4141-817d-4559ac08b178" />
+All Listings or Explore function:
 
 
+<img width="1920" height="1020" alt="Screenshot 2025-07-18 141918" src="https://github.com/user-attachments/assets/ea93e94d-06f9-4c79-b1f3-f0538f427f93" />
+
+Authentication Page:
+
+<img width="1920" height="1020" alt="Screenshot 2025-07-18 141937" src="https://github.com/user-attachments/assets/172d38b0-174d-44fa-88b0-db916f02eea6" />
+
+
+Create or add a new Listings:
+
+<img width="1920" height="1020" alt="Screenshot 2025-07-18 142016" src="https://github.com/user-attachments/assets/656725f8-ca51-4c43-9453-06fd3e8c4318" />
+
+
+Show Listings/view:
+
+<img width="1920" height="1020" alt="Screenshot 2025-07-18 143615" src="https://github.com/user-attachments/assets/67eac1d7-7e3f-4431-a347-84a0b6c3cf59" />
+
+Edit Listings:
+
+<img width="1920" height="1020" alt="Screenshot 2025-07-18 143733" src="https://github.com/user-attachments/assets/2ea36830-68a9-4b7a-9695-28c5cf037eaa" />
 
 
 ### Prerequisites
@@ -62,9 +78,14 @@ Before you start, make sure you have the following installed:
 - **npm** (Node package manager)
 - **MongoDB** (locally installed or use **MongoDB Atlas** for cloud storage)
 
+###Future Scope 
+-**Need to add a payment gate way so that users can access for the payment**
+-**Smart Filtering & Search: Integrate AI to suggest properties based on user preferences, budget, and travel history.**
+
 ### Installation
 
 1. Clone this repository to your local machine:
 
    ```bash
    git clone https://github.com/madhu-maneesh/TripNest.git
+   
