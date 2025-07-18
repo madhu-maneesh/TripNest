@@ -41,7 +41,18 @@ The authentication flow includes:
 - **Password hashing** with **bcrypt** for secure storage.
 - **Session management** with **express-session** and **Passport.js**.
   
-## Setup
+## Screenshots
+Homepage of the TripNest
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/0ba371d3-a4ed-45a3-9234-01644d3bc5b4" />
+
+<img width="1920" height="1020" alt="Screenshot 2025-07-18 141937" src="https://github.com/user-attachments/assets/239526ce-db6c-4376-997e-15c54d6966f3" />
+<img width="1920" height="1020" alt="Screenshot 2025-07-18 141918" src="https://github.com/user-attachments/assets/1f965a4a-d38d-4d42-996a-e5f6981c2fc0" />
+
+
+<img width="1920" height="1020" alt="Screenshot 2025-07-18 142016" src="https://github.com/user-attachments/assets/d60810c6-487e-4141-817d-4559ac08b178" />
+
+
+
 
 ### Prerequisites
 
