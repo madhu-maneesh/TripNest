@@ -1,12 +1,63 @@
 <nav class="navbar navbar-expand-md bg-light border-bottom sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold text-danger" href="/"><i class="fa-solid fa-compass"></i> TripNest</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+  <div class="container">
+
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold text-danger" href="/">
+      <i class="fa-solid fa-compass"></i> TripNest
+    </a>
+
+    <!-- Desktop Search (VISIBLE ONLY ≥ md) -->
+    <form
+      class="d-none d-md-flex mx-auto"
+      role="search"
+      action="/listings"
+      method="GET"
+      style="width: 40%;"
+    >
+      <input
+        class="form-control rounded-pill px-4 shadow-sm border-0 me-2"
+        type="search"
+        name="q"
+        placeholder="🔍 Search destinations..."
+      />
+      <button class="btn btn-outline-secondary rounded-pill" type="submit">
+        Search
+      </button>
+    </form>
+
+    <!-- Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+    <!-- Collapsible -->
+    <div class="collapse navbar-collapse mt-3 mt-md-0" id="navbarNav">
+
+      <!-- Mobile Search (VISIBLE ONLY < md) -->
+      <form
+        class="d-md-none mb-3"
+        role="search"
+        action="/listings"
+        method="GET"
+      >
+        <input
+          class="form-control rounded-pill px-4 shadow-sm mb-2"
+          type="search"
+          name="q"
+          placeholder="🔍 Search destinations..."
+        />
+        <button class="btn btn-outline-secondary w-100 rounded-pill">
+          Search
+        </button>
+      </form>
+
+      <!-- Links -->
+      <ul class="navbar-nav me-md-auto">
         <li class="nav-item">
           <a class="nav-link" href="/listings">Explore</a>
         </li>
@@ -15,26 +66,8 @@
         </li>
       </ul>
 
-      <!-- <form class="d-flex me-md-3 mb-2 mb-md-0" role="search" action="/listings" method="GET">
-        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
-  <form class="d-flex flex-wrap gap-2 align-items-center" role="search" action="/listings" method="GET" style="max-width: 500px; margin: auto;">
-    <input 
-      class="form-control rounded-pill px-4 shadow-sm border-0" 
-      type="search" 
-      name="q" 
-      placeholder="🔍 Search destinations..." 
-      aria-label="Search" 
-      style="flex: 1; min-width: 200px;"/>
-    <button 
-        class="btn btn-success rounded-pill px-4 fw-semibold shadow-sm" 
-        type="submit">Search
-    </button>
-  </form>
-
-
-      <ul class="navbar-nav mb-2 mb-md-0">
+      <!-- Auth -->
+      <ul class="navbar-nav ms-md-auto">
         <% if (!currUser) { %>
           <li class="nav-item">
             <a class="nav-link" href="/signup">Signup</a>
@@ -48,6 +81,7 @@
           </li>
         <% } %>
       </ul>
+
     </div>
   </div>
 </nav>
